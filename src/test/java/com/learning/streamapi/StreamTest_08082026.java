@@ -18,7 +18,14 @@ public class StreamTest_08082026 {
 			    new Transaction("T3", "CREDIT", 80.0),
 			    new Transaction("T4", "CREDIT", 500.0)
 			);
-		Testclass_08082026.method3(data);
+		var actualResult=Testclass_08082026.method3(data);
+		List<Transaction> expectedResult=List.of(
+			    new Transaction("T1", "CREDIT", 150.0),
+			    new Transaction("T4", "CREDIT", 500.0)
+			);
+		assertThat(actualResult)
+		.isNotEmpty()
+		.isEqualTo(expectedResult);
 	}
 	
 	@Test
